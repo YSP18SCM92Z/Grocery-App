@@ -31,27 +31,13 @@ class SubCategoryActivity : AppCompatActivity() {
 
 //        Toast.makeText(this, url, Toast.LENGTH_LONG).show()
 
-        init(url)
-
         getSubCategory(url)
-    }
-
-    private fun init(url : String) {
-
-        var list = ArrayList<SubCategory>()
-
-        fragmentAdapter = FragmentAdapter(supportFragmentManager)
-//        for(subCategory in getSubCategory(url)){
-//            fragmentAdapter?.addFragment(subCategory)
-//        }
-        view_pager.adapter = fragmentAdapter
-        tab_layout.setupWithViewPager(view_pager)
-
-
     }
 
 
     private fun getSubCategory(url: String): ArrayList<SubCategory>{
+        fragmentAdapter = FragmentAdapter(supportFragmentManager)
+
         var list: ArrayList<SubCategory> = ArrayList<SubCategory>()
 //        list.add(SubCategory("Sub 1"))
 //        list.add(SubCategory("Sub 2"))
@@ -74,9 +60,6 @@ class SubCategoryActivity : AppCompatActivity() {
                 }
                 view_pager.adapter = fragmentAdapter
                 tab_layout.setupWithViewPager(view_pager)
-
-//                fragmentAdapter?.setData(subCategory.subName)
-//                list.add(subCategory)
 
             },
             Response.ErrorListener {

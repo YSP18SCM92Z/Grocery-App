@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
@@ -33,7 +34,7 @@ class CategoryActivity : AppCompatActivity() {
     private fun init() {
         var list = ArrayList<Category>()
 
-        recycler_view.layoutManager = LinearLayoutManager(this)
+        recycler_view.layoutManager = GridLayoutManager(this, 2)
         adapter = CategoryAdapter(this, list)
         recycler_view.adapter = adapter
     }

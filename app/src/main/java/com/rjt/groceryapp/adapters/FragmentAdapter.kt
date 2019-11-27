@@ -7,7 +7,7 @@ import com.rjt.groceryapp.fragments.ProductFragment
 import com.rjt.groceryapp.models.SubCategory
 
 
-class FragmentAdapter (fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager){
+class FragmentAdapter (fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
     var mTitleList: ArrayList<String> = ArrayList<String>()
     var mFragmentList: ArrayList<Fragment> = ArrayList<Fragment>()
 
@@ -24,8 +24,9 @@ class FragmentAdapter (fragmentManager: FragmentManager) : FragmentPagerAdapter(
     }
 
 
-    fun addFragment(subCategory: SubCategory){
-        mFragmentList.add(ProductFragment.newInstance(subCategory.subName))
+    fun addFragment(subCategory: SubCategory) {
+//        mFragmentList.add(ProductFragment.newInstance(subCategory.subName))
+        mFragmentList.add(ProductFragment.newInstance(""))
         mTitleList.add(subCategory.subName)
     }
 }

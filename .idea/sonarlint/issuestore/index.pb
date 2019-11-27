@@ -31,3 +31,7 @@ d
 4app/src/main/java/com/rjt/groceryapp/models/Login.kt,8/5/85d314fa9c1c785c80ac37302364fbb324620db7
 n
 >app/src/main/java/com/rjt/groceryapp/models/SubCategoryList.kt,c/4/c43d21ade17de0ee2a0762efb101d659cf5ce696
+c
+3app/src/main/java/com/rjt/groceryapp/models/User.kt,8/c/8c3c746560c36ab4a901d556a4a1bc54a35cc781
+n
+>app/src/main/java/com/rjt/groceryapp/helpers/SessionManager.kt,3/1/31c1252dd75b1e6456819965e4c073d97d830db2
