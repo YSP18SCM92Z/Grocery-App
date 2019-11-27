@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.rjt.groceryapp.R
-import kotlinx.android.synthetic.main.fragment_product_fragment.view.*
+import kotlinx.android.synthetic.main.fragment_product_big_layout.view.*
 
 private const val ARG_PARAM1 = "param1"
 
@@ -19,14 +19,14 @@ private const val ARG_PARAM1 = "param1"
 class ProductFragment : Fragment() {
 
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
+    private var subCategoryName: String? = null
 
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            subCategoryName = it.getString(ARG_PARAM1)
 
         }
     }
@@ -36,8 +36,17 @@ class ProductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_product_fragment, container, false)
-        view.text_view.text = param1
+        var view = inflater.inflate(R.layout.fragment_product_big_layout, container, false)
+        view.text_view.text = subCategoryName
+
+
+
+
+
+
+
+
+
         return view
     }
 

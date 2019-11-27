@@ -3,6 +3,9 @@ package com.rjt.groceryapp.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +19,7 @@ import com.rjt.groceryapp.adapters.CategoryAdapter
 import com.rjt.groceryapp.models.Category
 import com.rjt.groceryapp.models.CategoryList
 import kotlinx.android.synthetic.main.activity_category.*
+import kotlinx.android.synthetic.main.app_bar.*
 import kotlin.collections.ArrayList
 
 class CategoryActivity : AppCompatActivity() {
@@ -26,9 +30,35 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
+        setUpToolBar()
+
         init()
 
         getCategory()
+    }
+
+    private fun setUpToolBar() {
+        var toolbar = tool_bar
+
+        toolbar.title = "Home"
+
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
 
     private fun init() {
