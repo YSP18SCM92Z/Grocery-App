@@ -24,7 +24,9 @@
         <activity android:name=".activities.SubCategoryActivity" />
         <activity android:name=".activities.CategoryActivity" />
         <activity android:name=".activities.RegisterActivity"></activity>
-        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.LoginActivity">
+
+        </activity>
     </application>
 
 </manifest>
