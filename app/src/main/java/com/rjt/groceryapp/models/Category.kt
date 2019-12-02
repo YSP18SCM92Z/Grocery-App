@@ -1,7 +1,7 @@
 package com.rjt.groceryapp.models
 
 data class Category (
-    var _id: String,
+    var catId: Int,
     var catImage: String,
     var catDesciption: String,
     var catName: String,

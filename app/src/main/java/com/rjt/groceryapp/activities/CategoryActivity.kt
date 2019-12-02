@@ -1,14 +1,12 @@
 package com.rjt.groceryapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -16,11 +14,11 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.GsonBuilder
 import com.rjt.groceryapp.R
 import com.rjt.groceryapp.adapters.CategoryAdapter
+import com.rjt.groceryapp.adapters.ImageSliderAdapter
 import com.rjt.groceryapp.models.Category
 import com.rjt.groceryapp.models.CategoryList
 import kotlinx.android.synthetic.main.activity_category.*
 import kotlinx.android.synthetic.main.app_bar.*
-import kotlin.collections.ArrayList
 
 class CategoryActivity : AppCompatActivity() {
 
@@ -32,9 +30,16 @@ class CategoryActivity : AppCompatActivity() {
 
         setUpToolBar()
 
+        imageSlider()
+
         init()
 
         getCategory()
+    }
+
+    private fun imageSlider() {
+        var imageSliderAdapter: ImageSliderAdapter = ImageSliderAdapter(supportFragmentManager)
+        view_pager_category.adapter = imageSliderAdapter
     }
 
     private fun setUpToolBar() {
@@ -47,7 +52,7 @@ class CategoryActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
+        return when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 return true
@@ -69,12 +74,12 @@ class CategoryActivity : AppCompatActivity() {
         recycler_view.adapter = adapter
     }
 
-    private fun getCategory(){
+    private fun getCategory() {
         val url: String = "https://apolis-grocery.herokuapp.com/api/category"
         var requestQueue = Volley.newRequestQueue(this)
         var stringRequest = StringRequest(
             Request.Method.GET, url,
-            Response.Listener{ response ->
+            Response.Listener { response ->
                 // make sure data type is String
                 var data = response.toString()
 
@@ -82,7 +87,7 @@ class CategoryActivity : AppCompatActivity() {
                 var gson = GsonBuilder().create()
 
                 // gson.fromJson is converting Kotlin Data Class from JSON using GSON
-                var categoryList: CategoryList =  gson.fromJson(data, CategoryList::class.java)
+                var categoryList: CategoryList = gson.fromJson(data, CategoryList::class.java)
 
                 adapter?.setData(categoryList.data)
 

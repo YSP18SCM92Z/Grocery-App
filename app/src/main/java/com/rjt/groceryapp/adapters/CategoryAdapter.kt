@@ -35,12 +35,11 @@ class CategoryAdapter(var mContext: Context, var mList: ArrayList<Category>) : R
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bindView(category: Category){
 
-            var name = category.catName
-            itemView.text_view_category_name.text = name
+            itemView.text_view_category_name.text = category.catName
 
             itemView.setOnClickListener {
                 var intent = Intent(mContext, SubCategoryActivity::class.java)
-                intent.putExtra("NAME", name)
+                intent.putExtra("ID", category.catId.toString())
                 mContext.startActivity(intent)
             }
         }
