@@ -23,8 +23,8 @@ class SessionManager (var context: Context){
 
 
     fun CreateUser(user: User){
-        editor.putString(FIRST_NAME, user.firstName)
-        editor.putString(LAST_NAME, user.lastName)
+//        editor.putString(FIRST_NAME, user.firstName)
+//        editor.putString(LAST_NAME, user.lastName)
         editor.putBoolean(IS_LOGIN, true)
         editor.commit()
     }

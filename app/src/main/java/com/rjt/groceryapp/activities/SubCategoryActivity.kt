@@ -3,6 +3,7 @@ package com.rjt.groceryapp.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -17,7 +18,7 @@ import java.net.URL
 
 class SubCategoryActivity : AppCompatActivity() {
 
-    var prefixURL : String = "https://apolis-grocery.herokuapp.com/api/subcategory/name/"
+    var prefixURL : String = "https://apolis-grocery.herokuapp.com/api/subcategory/"
 
     var fragmentAdapter: FragmentAdapter? = null
 
@@ -25,11 +26,11 @@ class SubCategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_list)
 
-        var categoryName = intent.getStringExtra("NAME")
+        var catID = intent.getStringExtra("ID")
 
-        var url = prefixURL + categoryName
+        var url = prefixURL + catID.toString()
 
-//        Toast.makeText(this, url, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, url, Toast.LENGTH_LONG).show()
 
         getSubCategory(url)
     }
