@@ -1,19 +1,13 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
+    android:background="@color/white"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
         android:layout_centerInParent="true"
         android:id="@+id/image_view_splash_screen"
-        android:src="@drawable/ic_launcher_foreground"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_below="@id/image_view_splash_screen"
-        android:layout_centerHorizontal="true"
-        android:text="Grocery App"
+        android:src="@drawable/the_village"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

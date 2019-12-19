@@ -1,4 +1,4 @@
-package com.rjt.groceryapp.fragments
+package com.rjt.groceryapp.ImageSliderFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

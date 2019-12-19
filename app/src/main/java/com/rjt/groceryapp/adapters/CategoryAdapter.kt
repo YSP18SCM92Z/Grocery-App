@@ -34,12 +34,22 @@ class CategoryAdapter(var mContext: Context, var mList: ArrayList<Category>) : R
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bindView(category: Category){
+            if (position == 0) {
+                itemView.category_image.setImageResource(R.drawable.ic_local_drink_oriange_24dp)
+            } else if (position == 1) {
+                itemView.category_image.setImageResource(R.drawable.ic_free_breakfast_dairy_24dp)
+            } else if (position == 2) {
+                itemView.category_image.setImageResource(R.drawable.ic_spa_green_24dp)
+            } else if (position == 3) {
+                itemView.category_image.setImageResource(R.drawable.ic_cake_cake_24dp)
+            }
 
             itemView.text_view_category_name.text = category.catName
 
             itemView.setOnClickListener {
                 var intent = Intent(mContext, SubCategoryActivity::class.java)
-                intent.putExtra("ID", category.catId.toString())
+                intent.putExtra("ID", category.catId)
+                intent.putExtra("NAME", category.catName)
                 mContext.startActivity(intent)
             }
         }

@@ -1,0 +1,57 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include layout="@layout/app_bar"/>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/recycler_view_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="25dp"
+            android:id="@+id/text_view_total_price"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:textSize="28dp"
+            android:text="Total: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginBottom="25dp"
+            android:text="20"
+            android:textSize="28dp"
+            android:id="@+id/text_view_number_of_price"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/text_view_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_margin="20dp"
+            android:id="@+id/button_place_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="Place Order"
+            app:cornerRadius="50dp"
+            android:elevation="10dp"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

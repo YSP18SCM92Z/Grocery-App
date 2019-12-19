@@ -1,4 +1,4 @@
-package com.rjt.groceryapp.fragments
+package com.rjt.groceryapp.ImageSliderFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.rjt.groceryapp.R
 import kotlinx.android.synthetic.main.fragment_image.view.*
 
-class SecondImage : Fragment() {
+class FirstImage : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -17,7 +17,7 @@ class SecondImage : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_image, container, false)
 
-        view.image_view_picture.setImageResource(R.drawable.happy_thanksgiving)
+        view.image_view_picture.setImageResource(R.drawable.welcome)
 
         return view
     }

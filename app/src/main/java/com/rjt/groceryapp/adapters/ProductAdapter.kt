@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rjt.groceryapp.R
 import com.rjt.groceryapp.activities.ProductDetailActivity
+import com.rjt.groceryapp.app.Config
 import com.rjt.groceryapp.models.Product
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row_product_adapter.view.*
@@ -40,7 +41,7 @@ class ProductAdapter (var mContext: Context, var mList: ArrayList<Product>) : Re
             itemView.text_view_price.text = "$ " + product.price.toString()
 
             Picasso.with(mContext)
-                .load("http://rjtmobile.com/grocery/images/" + product.image)
+                .load(Config.IMAGE_URL + product.image)
                 .placeholder(R.drawable.no_image)
                 .error(R.drawable.no_image)
                 .into(itemView.image_view)

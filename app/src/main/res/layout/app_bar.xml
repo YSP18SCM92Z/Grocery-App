@@ -1,5 +1,25 @@
-<androidx.appcompat.widget.Toolbar android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
+<androidx.appcompat.widget.Toolbar
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tool_bar"
-    xmlns:android="http://schemas.android.com/apk/res/android" />
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:backgroundTint="#5c913b"
+    android:fitsSystemWindows="true"
+    android:minHeight="?attr/actionBarSize"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+    <!--    style="@style/Theme.MaterialComponents.Light.DarkActionBar"-->
+
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    android:id="@+id/tool_bar"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+
+    <!--    android:background="@color/colorPrimary"-->
+    <!--    app:titleTextColor="@color/white"-->

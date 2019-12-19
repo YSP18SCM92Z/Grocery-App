@@ -17,6 +17,7 @@ import com.google.gson.GsonBuilder
 
 import com.rjt.groceryapp.R
 import com.rjt.groceryapp.adapters.ProductAdapter
+import com.rjt.groceryapp.app.Endpoints
 import com.rjt.groceryapp.models.Product
 import com.rjt.groceryapp.models.ProductList
 import kotlinx.android.synthetic.main.fragment_product_big_layout.*
@@ -71,8 +72,10 @@ class ProductFragment : Fragment() {
 
 //        var filtedList: ArrayList<Product> = ArrayList<Product>()
 
-        var prefix: String = "https://apolis-grocery.herokuapp.com/api/products/"
-        val url = prefix + subCategoryId
+//        var prefix: String = "https://apolis-grocery.herokuapp.com/api/products/"
+//        val url = prefix + subCategoryId
+
+        val url = Endpoints.getProductBySubId(subCategoryId!!.toInt())
 
 //        val url: String = "http://rjtmobile.com/grocery/products.json"
 
@@ -90,13 +93,6 @@ class ProductFragment : Fragment() {
                 var productList: ProductList =  gson.fromJson(data, ProductList::class.java)
 
                 list = productList.data
-
-//                for (product in list) {
-//                    if (product.subId.toString() == subCategoryId) {
-//                        filtedList.add(product)
-//                    }
-//                }
-
 
                 adapter.setData(list)
 

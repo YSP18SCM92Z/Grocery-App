@@ -13,6 +13,7 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.rjt.groceryapp.R
+import com.rjt.groceryapp.helpers.SessionManager
 import com.rjt.groceryapp.models.Register
 import kotlinx.android.synthetic.main.register.*
 import org.json.JSONObject
@@ -23,14 +24,16 @@ class RegisterActivity  : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
 
-
-
         button_submit.setOnClickListener {
             getRegister()
 
             var intent = Intent(this, LoginActivity::class.java)
 
             startActivity(intent)
+        }
+
+        text_view_click_2.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
     }
@@ -55,7 +58,13 @@ class RegisterActivity  : AppCompatActivity() {
         var jsonObjRequest = JsonObjectRequest(
             Request.Method.POST, url, JSONObject(json),
             Response.Listener{ response ->
+
                 Toast.makeText(applicationContext, "registered", Toast.LENGTH_LONG).show()
+                SessionManager(this).CreateUser(register)
+
+                var intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
             },
             Response.ErrorListener {
                 Toast.makeText(applicationContext, "not created", Toast.LENGTH_LONG).show()
