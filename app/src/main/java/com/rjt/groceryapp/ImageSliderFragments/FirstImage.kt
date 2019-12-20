@@ -17,7 +17,7 @@ class FirstImage : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_image, container, false)
 
-        view.image_view_picture.setImageResource(R.drawable.welcome)
+        view.image_view_picture.setImageResource(R.drawable.fresh_market)
 
         return view
     }

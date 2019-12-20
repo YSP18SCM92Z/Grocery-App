@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
+    android:id="@+id/layout_cart"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <include layout="@layout/app_bar"/>

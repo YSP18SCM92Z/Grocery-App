@@ -18,10 +18,12 @@ import com.rjt.groceryapp.helpers.SessionManager
 import com.rjt.groceryapp.interfaces.ClickListener
 import com.rjt.groceryapp.models.Cart
 import kotlinx.android.synthetic.main.activity_cart.*
+import kotlinx.android.synthetic.main.activity_cart.view.*
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.fragment_product_big_layout.*
+import kotlinx.android.synthetic.main.login.*
 
-class CartActivity : AppCompatActivity(), ClickListener {
+class CartActivity : AppCompatActivity(), ClickListener{
 
     private lateinit var dbHelper: DBHelper
 
@@ -37,7 +39,7 @@ class CartActivity : AppCompatActivity(), ClickListener {
 
         onQuantityChange()
 
-        Toast.makeText(this, ""+ mList.size, Toast.LENGTH_LONG).show()
+//        Toast.makeText(this, ""+ mList.size, Toast.LENGTH_LONG).show()
 
         init()
 
@@ -85,15 +87,23 @@ class CartActivity : AppCompatActivity(), ClickListener {
         cartAdapter = CartAdapter(this, mList, this)
         recycler_view_cart.adapter = cartAdapter
 
+//        button_place_order.setOnClickListener(this)
+
         button_place_order.setOnClickListener {
             if (SessionManager(this).isLogin()) {
                 startActivity(Intent(this, CheckoutActivity::class.java))
             } else {
-                var intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+
+                Snackbar
+                    .make(layout_cart, "Please go back to login", Snackbar.LENGTH_LONG)
+                    .setAction("Login", View.OnClickListener {
+                        var intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                    })
+                    .show()
+
             }
         }
-
 
     }
 
@@ -104,6 +114,19 @@ class CartActivity : AppCompatActivity(), ClickListener {
 
         text_view_number_of_price.text = "$ %.2f".format(totalPrice)
     }
+
+//    override fun onClick(v: View) {
+//
+//        v.button_place_order.setOnClickListener {
+//            if (SessionManager(this).isLogin()) {
+//                startActivity(Intent(this, CheckoutActivity::class.java))
+//            } else {
+////                Snackbar.make(layout_login, "go back to Login", Snackbar.LENGTH_LONG).show()
+//                var intent = Intent(this, LoginActivity::class.java)
+//                startActivity(intent)
+//            }
+//        }
+//    }
 
 
 }

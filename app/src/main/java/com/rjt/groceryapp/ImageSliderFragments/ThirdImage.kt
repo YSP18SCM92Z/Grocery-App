@@ -18,7 +18,7 @@ class ThirdImage : Fragment() {
         var view = inflater.inflate(R.layout.fragment_image, container, false)
 
 //        view.text_view_title.text = "From first fragement"
-        view.image_view_picture.setImageResource(R.drawable.merry_christmas)
+        view.image_view_picture.setImageResource(R.drawable.welcome)
 
         return view
     }

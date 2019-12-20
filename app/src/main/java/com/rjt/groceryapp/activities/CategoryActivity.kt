@@ -57,7 +57,12 @@ class CategoryActivity : AppCompatActivity() {
     private fun setUpToolBar() {
         var toolbar = tool_bar
 
-        toolbar.title = "Home"
+        if (SessionManager(this).getFirstName() == null) {
+            toolbar.title = "Welcome my guest"
+        } else {
+            toolbar.title = "Welcome ${SessionManager(this).getFirstName()}"
+        }
+
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

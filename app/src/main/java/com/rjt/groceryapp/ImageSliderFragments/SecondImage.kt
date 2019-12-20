@@ -17,7 +17,7 @@ class SecondImage : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_image, container, false)
 
-        view.image_view_picture.setImageResource(R.drawable.happy_thanksgiving)
+        view.image_view_picture.setImageResource(R.drawable.christmas)
 
         return view
     }

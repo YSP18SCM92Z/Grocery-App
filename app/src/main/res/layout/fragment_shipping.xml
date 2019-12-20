@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="40dp"
+        android:text="Select Payment"
+        android:textSize="32dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/button_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Card"/>
+
+        <RadioButton android:id="@+id/button_cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cash on Delivery"/>
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="40dp"
+        android:text="Shipping Options"
+        android:textSize="32dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RadioButton android:id="@+id/button_standard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Standard"/>
+
+
+        <RadioButton android:id="@+id/button_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Express"/>
+
+
+
+    </RadioGroup>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_confirm_shipping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/colorPrimary"
+        android:elevation="10dp"
+        app:cornerRadius="50dp"
+        android:text="Confirm shipping"
+        android:textColor="@color/white"
+        android:textSize="20dp"/>
+
+
+
+
+</LinearLayout>

@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.FragmentManager
 import com.rjt.groceryapp.R
+import com.rjt.groceryapp.adapters.CheckoutFragmentAdapter
+import com.rjt.groceryapp.fragments.AddressFragment
 import com.rjt.groceryapp.helpers.SessionManager
+import kotlinx.android.synthetic.main.activity_category.*
 import kotlinx.android.synthetic.main.activity_checkout.*
 import kotlinx.android.synthetic.main.app_bar.*
 
@@ -23,15 +27,19 @@ class CheckoutActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        button_confirm_address.setOnClickListener {
-            startActivity(Intent(this, ConfirmationActivity::class.java))
-        }
+
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container_checkout, AddressFragment()).commit()
+
+//        var fragmentAdapter = CheckoutFragmentAdapter(supportFragmentManager)
+//        view_pager_category.adapter = fragmentAdapter
+//        tab_layout_checkout.setupWithViewPager(view_pager_category)
+
     }
 
     private fun setUpToolBar() {
         var toolbar = tool_bar
 
-        toolbar.title = "Cart"
+        toolbar.title = "Customer Information"
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

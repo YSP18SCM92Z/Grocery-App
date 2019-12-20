@@ -15,6 +15,7 @@ import com.rjt.groceryapp.helpers.SessionManager
 import com.rjt.groceryapp.models.Cart
 import com.rjt.groceryapp.models.Product
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.activity_product_detail.*
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.row_cart_adapter.*
@@ -88,6 +89,7 @@ class ProductDetailActivity : AppCompatActivity() {
             into(image_view_product_detail)
 
         button_add_to_cart.setOnClickListener {
+
             dbHelper = DBHelper(this)
 
 
